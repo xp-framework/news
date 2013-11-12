@@ -2,8 +2,6 @@
 
 /**
  * Represent an Article
- *
- * @purpose  Base class
  */
 class Article extends \lang\Object {
   public
@@ -15,7 +13,8 @@ class Article extends \lang\Object {
   /**
    * Constructor
    *
-   * @param   int articleId
+   * @param   int $articleId
+   * @param   int $messageId
    */
   public function __construct($articleId, $messageId) {
     $this->articleId= $articleId;
@@ -25,7 +24,7 @@ class Article extends \lang\Object {
   /**
    * Set ArticleId
    *
-   * @param   string articleId
+   * @param   string $articleId
    */
   public function setArticleId($articleId) {
     $this->articleId= $articleId;
@@ -43,7 +42,7 @@ class Article extends \lang\Object {
   /**
    * Set MessageId
    *
-   * @param   int messageId
+   * @param   int $messageId
    */
   public function setMessageId($messageId) {
     $this->messageId= $messageId;
@@ -61,7 +60,8 @@ class Article extends \lang\Object {
   /**
    * Set Header
    *
-   * @param   var[] header
+   * @param   string $name
+   * @param   string $value
    */
   public function setHeader($name, $value) {
     $this->header[$name]= $value;
@@ -79,8 +79,8 @@ class Article extends \lang\Object {
   /**
    * Get Headers
    *
-   * @param   string name
-   * @return  string value
+   * @param   string $name
+   * @return  string
    */
   public function getHeader($name) {
     return $this->header[$name];
@@ -89,7 +89,7 @@ class Article extends \lang\Object {
   /**
    * Set Body
    *
-   * @param   string body
+   * @param   string $body
    */
   public function setBody($body) {
     $this->body= $body;
@@ -104,7 +104,6 @@ class Article extends \lang\Object {
     return $this->body;
   }
   
-  
   /**
    * Retrieve a string representation of this object
    *
@@ -116,8 +115,6 @@ class Article extends \lang\Object {
       $s.= sprintf("  [%-26s] %s\n", $name, $attr);
     }
     $s.= sprintf("\n  %s\n", str_replace("\n", "\n  ", $this->getBody()));
-
     return $s."}\n";
   }
-
 }

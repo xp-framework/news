@@ -3,9 +3,7 @@
 /**
  * Represent a Newsgroup
  *
- * @ext      extension
- * @see      xp://peer.news.NntpConnection#getGroups
- * @purpose  Base class
+ * @see   xp://peer.news.NntpConnection#getGroups
  */
 class Newsgroup extends \lang\Object {
   public
@@ -17,9 +15,10 @@ class Newsgroup extends \lang\Object {
   /**
    * Constructor
    *
-   * @param   string name
-   * @param   string lastmessage
-   * @param   string firstmessage
+   * @param   string $name
+   * @param   int $last
+   * @param   int $first
+   * @param   string $flags
    */
   public function __construct($name, $last, $first, $flags) {
     $this->name= $name;
@@ -31,7 +30,7 @@ class Newsgroup extends \lang\Object {
   /**
    * Set Name
    *
-   * @param   string name
+   * @param   string $name
    */
   public function setName($name) {
     $this->name= $name;
@@ -49,7 +48,7 @@ class Newsgroup extends \lang\Object {
   /**
    * Set Last
    *
-   * @param   int last
+   * @param   int $last
    */
   public function setLast($last) {
     $this->last= $last;
@@ -67,7 +66,7 @@ class Newsgroup extends \lang\Object {
   /**
    * Set First
    *
-   * @param   int first
+   * @param   int $first
    */
   public function setFirst($first) {
     $this->first= $first;
@@ -85,7 +84,7 @@ class Newsgroup extends \lang\Object {
   /**
    * Set Flags
    *
-   * @param   string flags
+   * @param   string $flags
    */
   public function setFlags($flags) {
     $this->flags= $flags;

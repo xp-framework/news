@@ -40,8 +40,7 @@ define('NNTP_PROGRAM_FAULT',        503);
 /**
  * Stores NNTP constants
  *
- * @see      rfc://977
- * @purpose  Base class
+ * @see   rfc://977
  */
 class NntpReply extends \lang\Object {
 
