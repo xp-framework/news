@@ -5,6 +5,7 @@ use peer\ProtocolException;
 use peer\URL;
 use util\Date;
 use util\log\Traceable;
+use security\auth\AuthenticatorException;
 
 /**
  * NNTP Connection
@@ -160,7 +161,7 @@ class NntpConnection extends \lang\Object implements Traceable {
    *
    * @param   string authmode
    * @return  bool success
-   * @throws  peer.AuthenticationException in case authentication failed
+   * @throws  security.auth.AuthenticationException in case authentication failed
    */  
   public function authenticate() {
     $status= $this->_sendcmd('AUTHINFO user', $this->url->getUser());
