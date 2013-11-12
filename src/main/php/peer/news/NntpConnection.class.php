@@ -35,6 +35,10 @@ class NntpConnection extends \lang\Object implements Traceable {
     $cat      = null,
     $response = array();
 
+  static function __static() {
+    \lang\XPClass::forName('peer.news.NntpReply');    // Defines global constants
+  }
+
   /**
    * Constructor
    *
